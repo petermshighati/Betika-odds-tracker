@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Football odds tracker with 1X2 market estimates and prediction history.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<title>Odds Tracker</title>
+</head>
+<body>
+<header>
+  <div class="brandmark">OT</div>
+  <div><h1>Odds Tracker</h1><p>Football markets · 1X2 tracker</p></div>
+  <span id="status" class="status">Not connected</span>
+</header>
+<main>
+  <section class="panel">
+    <h2>Connect live odds</h2>
+    <p class="muted">Uses The Odds API. Create an API key with soccer access, then paste it below. Betika prices appear only if your provider plan covers Betika.</p>
+    <label for="apiKey">API key</label>
+    <input id="apiKey" type="password" autocomplete="off" placeholder="Paste API key for this session">
+    <div class="grid2">
+      <div><label for="league">League</label>
+        <select id="league">
+          <option value="soccer_epl">Premier League</option>
+          <option value="soccer_uefa_champs_league">UEFA Champions League</option>
+          <option value="soccer_spain_la_liga">La Liga</option>
+          <option value="soccer_germany_bundesliga">Bundesliga</option>
+          <option value="soccer_italy_serie_a">Serie A</option>
+          <option value="soccer_france_ligue_one">Ligue 1</option>
+          <option value="soccer_usa_mls">MLS</option>
+        </select>
+      </div>
+      <div><label for="regions">Bookmaker region</label>
+        <select id="regions"><option value="eu">Europe (EU)</option><option value="uk">UK</option><option value="au">Australia</option><option value="us">US</option></select>
+      </div>
+    </div>
+    <div class="actions"><button id="loadBtn">Fetch live odds</button><button class="secondary" id="clearKeyBtn">Clear key</button></div>
+    <p class="tiny">The key is held in this page's memory only; it is not saved to browser storage. Do not share screenshots containing your key.</p>
+    <p id="error" class="error" role="status"></p>
+  </section>
+  <nav class="tabs" aria-label="Sections">
+    <button class="tab active" data-tab="matches">Matches</button>
+    <button class="tab" data-tab="history">Prediction history</button>
+  </nav>
+  <section id="matchesView">
+    <div class="sectionhead"><h2>Upcoming matches</h2><button class="secondary small" id="refreshBtn">Refresh</button></div>
+    <p id="loadedAt" class="muted tiny">No data loaded yet.</p>
+    <div id="matches" class="matchlist"><div class="empty">Connect your API key to load fixtures and odds.</div></div>
+  </section>
+  <section id="historyView" hidden>
+    <div class="sectionhead"><h2>Saved predictions</h2><button class="secondary small" id="clearHistoryBtn">Clear history</button></div>
+    <div id="history" class="matchlist"></div>
+  </section>
+  <section class="notice">
+    <strong>How to read this</strong>
+    <p>1 = home win, X = draw, 2 = away win. The percentages shown are normalized implied probabilities from the selected bookmaker's 1X2 prices, not a guarantee or an independent prediction model. Compare them with team news and historical performance before drawing conclusions.</p>
+  </section>
+</main>
+<footer>Prototype v0.1 · Odds can change quickly. Use responsibly.</footer>
+<script src="app.js"></script>
+</body>
+</html>
