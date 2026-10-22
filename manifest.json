@@ -1,0 +1,17 @@
+{
+  "background_color": "#ffffff",
+  "description": "Football odds tracker with 1X2 market estimates and prediction history.",
+  "dir": "auto",
+  "display": "standalone",
+  "name": "Betika Odds Tracker",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Betika Tracker",
+  "start_url": "/https://petermshighati.github.io/Betika-odds-tracker/",
+  "theme_color": "#123354",
+  "id": "Value",
+  "lang": "en",
+  "display_override": [
+    "window-controls-overlay"
+  ]
+}
