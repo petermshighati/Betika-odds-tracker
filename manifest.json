@@ -7,9 +7,9 @@
   "orientation": "portrait",
   "scope": "/",
   "short_name": "Betika Tracker",
-  "start_url": "/https://petermshighati.github.io/Betika-odds-tracker/",
+  "start_url": "/Betika-odds-tracker/",
   "theme_color": "#123354",
-  "id": "Value",
+  "id": "/Betika-odds-tracker/",
   "lang": "en",
   "display_override": [
     "window-controls-overlay"
